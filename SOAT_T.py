@@ -10,8 +10,6 @@ import streamlit as st
 import pandas as pd
 from PIL import Image
 
-
-
 ### condiciones de la pagina e importación del logo
 st.set_page_config(page_title= "SOAT Crecer Seguros",layout="wide")
 image = Image.open('logo.PNG')
@@ -23,9 +21,11 @@ ruta = 'Tarifario SOAT 202102.xlsx'
 t_digital = pd.read_excel(ruta,sheet_name= "TD_Crecer_M",header = 7, index_col =[0,1,2],engine ='openpyxl' )
 t_fisico = pd.read_excel(ruta,sheet_name= "TF_Crecer_M",header = 7, index_col =[0,1,2] ,engine ='openpyxl')
 
-t_digital["llave"] = t_digital.index.copy()
+#t_digital["llave"] = t_digital.index.copy()
+t_digital["llave"] = t_digital.multiindex.to_numpy.copy()
 t_digital.set_index("llave",append= True , inplace = True)
-t_fisico["llave"] = t_fisico.index.copy()
+#t_fisico["llave"] = t_fisico.index.copy()
+t_fisico["llave"] = t_fisico.multiindex.to_numpy.copy()
 t_fisico.set_index("llave",append= True , inplace = True)
 
 
