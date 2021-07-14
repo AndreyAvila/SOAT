@@ -151,6 +151,10 @@ def main():
         st.sidebar.header('')
         st.sidebar.header('')
         st.sidebar.header('')
+        st.sidebar.header('')
+        st.sidebar.header('')
+        st.sidebar.header('')
+              
         col1,col2,col3 = st.beta_columns(3)             
         col3.info(
             """  Developed by
