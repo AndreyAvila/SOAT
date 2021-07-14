@@ -4,6 +4,10 @@ Created on Wed Feb 24 08:31:20 2021
 
 @author: EFERNANDEZ
 """
+
+python.pythonPath": "${workspaceFolder}/env/bin/python3.6",
+git.ignoreLimitWarning": true
+       
 import streamlit as st
 import pandas as pd
 from PIL import Image
